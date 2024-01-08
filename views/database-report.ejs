@@ -1,0 +1,44 @@
+<!-- database-report.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Database Report</title>
+  <link rel="stylesheet" href="styles/style.css">
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>Database Report</h1>
+
+    <% if (userData && userData.length > 0) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% userData.forEach(user => { %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p class="no-data">No data available.</p>
+    <% } %>
+  </div>
+
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/react-table@7/dist/react-table.min.js"></script>
+</body>
+
+</html>
